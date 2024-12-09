@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ekolojik Kredi Sistemi - Atık Yönetimi ve Geri Dönüşüm Puanlama">
+  <title>Ekolojik Kredi Sistemi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="Ekolojik Kredi Logo">
+    <h1>Ekolojik Kredi Sistemi</h1>
+  </header>
+
+  <main>
+    <nav>
+      <ul>
+        <li><a href="#kayit-ol">Kayıt Ol</a></li>
+        <li><a href="#veri-girisi">Veri Girişi</a></li>
+        <li><a href="#veri-goruntule">Veri Görüntüle</a></li>
+        <li><a href="#toplam">Toplam Atık Sayacı</a></li>
+      </ul>
+    </nav>
+
+    <section>
+      <div id="kayit-ol">
+        <h2>Öğrenci Kayıt Formu</h2>
+        <form id="kayit-form">
+          <div class="form-group">
+            <label for="ogrenci-adi">Ad ve Soyad:</label>
+            <input type="text" id="ogrenci-adi" required>
+          </div>
+          <div class="form-group">
+            <label for="ogrenci-numara">Okul Numarası:</label>
+            <input type="text" id="ogrenci-numara" required>
+          </div>
+          <div class="form-group">
+            <label for="ogrenci-okul">Okul Adı:</label>
+            <input type="text" id="ogrenci-okul" required>
+          </div>
+          <button type="button" onclick="kayitOl()">Kayıt Ol</button>
+        </form>
+      </div>
+
+      <div id="veri-girisi">
+        <h2>Atık Veri Girişi</h2>
+        <form id="veri-girisi-form">
+          <div class="form-group">
+            <label for="atik-turu">Atık Türü:</label>
+            <select id="atik-turu">
+              <option value="yag">Yağ</option>
+              <option value="tekstil">Tekstil</option>
+              <option value="pil">Pil</option>
+              <option value="elektronik">Elektronik</option>
+              <option value="kagit">Kağıt</option>
+              <option value="cam">Cam</option>
+              <option value="metal">Metal</option>
+              <option value="plastik">Plastik</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="miktar">Miktar (kg/adet):</label>
+            <input type="number" id="miktar" required>
+          </div>
+          <div class="form-group">
+            <label for="kayit-yapan">Kaydı Yapan Kişi:</label>
+            <input type="text" id="kayit-yapan" required>
+          </div>
+          <button type="button" onclick="veriGirisi()">Veri Ekle</button>
+        </form>
+      </div>
+
+      <div id="veri-goruntule">
+        <h2>Atık Girişleri</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Tarih</th>
+              <th>Öğrenci Adı</th>
+              <th>Okul No</th>
+              <th>Atık Türü</th>
+              <th>Miktar</th>
+              <th>Puan</th>
+              <th>Kaydı Yapan</th>
+            </tr>
+          </thead>
+          <tbody id="kayitlar"></tbody>
+        </table>
+      </div>
+
+      <div id="toplam">
+        <h2>Toplam Atık Sayacı</h2>
+        <p>Toplam Kaydedilen Atık: <span id="toplam-atik">0</span> kg/adet</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Danışman Öğretmen: Osman Onuk | Öğrenciler: Muhammedcan Arslanparçası, Bilal Yiğit Tezcan, Yağız Efe Yılmaz</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
